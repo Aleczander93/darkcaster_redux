@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 
 router.get( '/', function(request, response){
-  response.send('public/html/index.html', {root: path.resolve('./')});
+  response.sendFile('public/html/index.html', {root: path.resolve('./')});
 });
 
-module.exports=routers;
+module.exports=router;

@@ -3,9 +3,9 @@
 var mySecretPassword = process.env.PASS || require('../config.js').secretPassword;
 //wtf is process.env.PASS???? think of apartment mailbox but for heroku
 
-function authorize(request, reponse, next){
+function authorize(request, response, next){
   var secretPassword = request.headers.secret;
-    if (!secretPassword || secretPassword !==''){
+    if (!secretPassword || secretPassword !=='How you like me now'){
       response.status(403).json({
         msg: 'You shall not pass!!!'
       });
@@ -15,4 +15,4 @@ function authorize(request, reponse, next){
 }
 
 
-module.exports= authorize;
+module.exports = authorize;
