@@ -1,3 +1,4 @@
+
 var express = require('express');
 var axios = require('axios'); //axios(promise) allows us to request from darksky database
 var authorize = require('../middleware/auth.js');
@@ -8,7 +9,6 @@ var timeoutConfig = {
 };
 
 router.use(authorize);
-
 router.get('/forecast/:longitude,:latitude', function(request, response){
   var url = forecastURL(request.params.latitude, request.params.longitude);
   axios.get(url, timeoutConfig)
